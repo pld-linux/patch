@@ -1,0 +1,40 @@
+diff -Nur patch-2.5.4.org/m4/malloc.m4 patch-2.5.4/m4/malloc.m4
+--- patch-2.5.4.org/m4/malloc.m4	Tue Nov  5 16:06:02 2002
++++ patch-2.5.4/m4/malloc.m4	Tue Nov  5 16:05:01 2002
+@@ -27,8 +27,7 @@
+ 	 jm_cv_func_working_malloc=no)
+   ])
+   if test $jm_cv_func_working_malloc = no; then
+-    AC_SUBST(LIBOBJS)
+-    LIBOBJS="$LIBOBJS malloc.$ac_objext"
++    AC_LIBOBJ([malloc])
+     AC_DEFINE_UNQUOTED(malloc, rpl_malloc,
+       [Define to rpl_malloc if the replacement function should be used.])
+   fi
+diff -Nur patch-2.5.4.org/m4/realloc.m4 patch-2.5.4/m4/realloc.m4
+--- patch-2.5.4.org/m4/realloc.m4	Tue Nov  5 16:06:02 2002
++++ patch-2.5.4/m4/realloc.m4	Tue Nov  5 16:05:33 2002
+@@ -27,8 +27,7 @@
+ 	 jm_cv_func_working_realloc=no)
+   ])
+   if test $jm_cv_func_working_realloc = no; then
+-    AC_SUBST(LIBOBJS)
+-    LIBOBJS="$LIBOBJS realloc.$ac_objext"
++    AC_LIBOBJ([realloc])
+     AC_DEFINE_UNQUOTED(realloc, rpl_realloc,
+       [Define to rpl_realloc if the replacement function should be used.])
+   fi
+--- patch-2.5.4/configure.in~   Mon Aug 30 06:20:08 1999
++++ patch-2.5.4/configure.in    Tue Nov  5 16:12:45 2002
+@@ -43,8 +43,9 @@
+ AC_TYPE_SIZE_T
+ jm_STRUCT_UTIMBUF
+ 
+-AC_CHECK_FUNC(getopt_long, , [LIBOBJS="$LIBOBJS getopt1\$U.o getopt\$U.o"])
+-AC_SUBST(LIBOBJS)
++AC_LIBOBJ([getopt])
++AC_LIBOBJ([getopt1])
++
+ AC_CHECK_FUNCS(_doprintf isascii fseeko memcmp mktemp \
+   pathconf raise setmode sigaction sigprocmask sigsetmask strerror)
+ AC_REPLACE_FUNCS(memchr mkdir rename rmdir)
