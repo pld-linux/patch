@@ -10,9 +10,6 @@ Version:	2.5.4
 Release:	13
 License:	GPL
 Group:		Applications/Text
-Group(de):	Applikationen/Text
-Group(fr):	Utilitaires/Texte
-Group(pl):	Aplikacje/Tekst
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/patch/%{name}-%{version}.tar.gz
 Source1:	%{name}.1.pl
 Patch0:		%{name}-stderr.patch
