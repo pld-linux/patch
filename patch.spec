@@ -36,7 +36,7 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 install -s patch $RPM_BUILD_ROOT%{_bindir}
 install patch.man $RPM_BUILD_ROOT%{_mandir}/man1/patch.1
@@ -54,32 +54,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/patch.1*
 
 %changelog
-* Mon May 10 1999 Piotr Czerwiñski <pius@pld.org.pl>
+* Tue May 25 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [2.5.3-5]
-- FHS 2.0 compliant changes.
-
-* Mon Apr 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [2.5.3-3]
-- recompiled on new rpm.
-
-* Sun Apr  4 1999 Piotr Czerwiñski <pius@pld.org.pl>
-  [2.5.3-2]
-- added gzipping documentation and man pages,
-- added Group(pl),
-- removed man group from man pages,
-- cosmetic changes for common l&f.
- 
-* Wed Sep 23 1998 Andrzej Nakonieczny <dzemik@shadow.eu.org>
-  [2.5.3-1d]
-- added pl translation.
-
-* Sun May 17 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-- AUTHORS, ChangeLog added to %doc,
-- added -q %setup parameter,
-- spec file rewrited for using Buildroot,
-- added %clean section,
-- added %defattr and %attr macros in %files (allows building package from
-  non-root account).
-
-* Mon Jun 02 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
+- spec based on RH version,
+- rewrited by PLD team,
+- pl translation Andrzej Nakonieczny <dzemik@shadow.eu.org>.
