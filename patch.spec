@@ -14,6 +14,7 @@ License:	GPL
 Group:		Applications/Text
 # 2.5.8 available at ftp://alpha.gnu.org/gnu/patch/
 Source0:	ftp://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.gz
+# Source0-md5: ee5ae84d115f051d87fcaaef3b4ae782
 Source1:	%{name}.1.pl
 Patch0:		%{name}-stderr.patch
 Patch1:		%{name}-suffix.patch
