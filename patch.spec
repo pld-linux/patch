@@ -5,7 +5,7 @@ Summary(pl):	GNU patch
 Summary(tr):	GNU yama yardýmcý programlarý
 Name:		patch
 Version:	2.5.4
-Release:	5
+Release:	10
 License:	GPL
 Group:		Applications/Text
 Group(de):	Applikationen/Text
@@ -13,6 +13,7 @@ Group(fr):	Utilitaires/Texte
 Group(pl):	Aplikacje/Tekst
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/patch/%{name}-%{version}.tar.gz
 Patch0:		%{name}-stderr.patch
+Patch1:		%{name}-suffix.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -51,11 +52,13 @@ deðiþiklikleri asýllarý ile birleþtirir.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 chmod +w configure
 autoconf
 
+CFLAGS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS} -D_GNU_SOURCE"
 %configure \
 %ifarch sparc sparc64
 	--disable-largefile
