@@ -9,7 +9,7 @@ Summary(tr):	GNU yama yardЩmcЩ programlarЩ
 Summary(uk):	Утил╕та GNU patch, для модиф╕кац╕╖/апгрейду файл╕в
 Name:		patch
 Version:	2.5.9
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Text
 # old/so-called-stable versions in ftp://ftp.gnu.org/gnu/patch/
