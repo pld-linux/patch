@@ -39,9 +39,10 @@ patch na³o¿yæ je. Daje to mo¿liwo¶æ rozprowadzania ma³ych plików, w których
 s± jedynie zmiany, jakie zosta³y wprowadzone w stosunku do orginalnych
 plików.
 
-%description -l tr Bu programý 'diff' komutunu uygulamak için
-kullanabilirsiniz. diff, bir dosya içindeki deðiþikliklerý belirtir; 'patch'
-komutu deðiþiklikleri asýllarý ile birleþtirir.
+%description -l tr
+Bu programý 'diff' komutunu uygulamak için kullanabilirsiniz. diff, bir
+dosya içindeki deðiþikliklerý belirtir; 'patch' komutu deðiþiklikleri
+asýllarý ile birleþtirir.
 
 %prep
 %setup -q
