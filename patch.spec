@@ -18,6 +18,7 @@ Source0:	ftp://alpha.gnu.org/gnu/patch/%{name}-%{version}.tar.gz
 Source1:	%{name}.1.pl
 Patch0:		%{name}-stderr.patch
 Patch1:		%{name}-sigsegv.patch
+URL:		http://www.gnu.org/software/patch/patch.html
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
