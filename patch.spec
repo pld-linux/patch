@@ -7,13 +7,14 @@ Summary(pt_BR):	Programa de inicialização System V
 Summary(tr):	GNU yama yardýmcý programlarý
 Name:		patch
 Version:	2.5.4
-Release:	12
+Release:	13
 License:	GPL
 Group:		Applications/Text
 Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
 Group(pl):	Aplikacje/Tekst
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/patch/%{name}-%{version}.tar.gz
+Source1:	%{name}.1.pl
 Patch0:		%{name}-stderr.patch
 Patch1:		%{name}-suffix.patch
 Patch2:		%{name}-ac25x.patch
@@ -91,6 +92,10 @@ rm -rf $RPM_BUILD_ROOT
 	bindir=$RPM_BUILD_ROOT%{_bindir} \
 	man1dir=$RPM_BUILD_ROOT%{_mandir}/man1
 
+install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/patch.1
+
 gzip -9nf NEWS README AUTHORS ChangeLog
 
 %clean
@@ -101,3 +106,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
