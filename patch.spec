@@ -66,7 +66,7 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install install-strip \
+%{__make} install install-strip \
 	bindir=$RPM_BUILD_ROOT%{_bindir} \
 	man1dir=$RPM_BUILD_ROOT%{_mandir}/man1
 
