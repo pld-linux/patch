@@ -10,7 +10,7 @@ Copyright:	GPL
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
 Source:		ftp://prep.ai.mit.edu/pub/gnu/patch/%{name}-%{version}.tar.gz
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Patch is a program to aid in patching programs. You can use it to apply
