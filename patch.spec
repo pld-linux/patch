@@ -61,7 +61,7 @@ LDFLAGS="-s"; export LDFLAGS
 	--disable-largefile
 %endif
 
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
