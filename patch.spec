@@ -2,7 +2,7 @@ Summary:	GNU patch Utilities
 Summary(pl):	GNU patch
 Name:		patch
 Version:	2.5.3
-Release:	2
+Release:	3
 Copyright:	GPL
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
@@ -53,6 +53,10 @@ rm -rf $RPM_BUILD_ROOT
 /usr/man/man1/patch.1.gz
 
 %changelog
+* Mon Apr 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [2.5.3-3]
+- recompiled on new rpm.
+
 * Sun Apr  4 1999 Piotr Czerwiñski <pius@pld.org.pl>
   [2.5.3-2]
 - added gzipping documentation and man pages,
