@@ -29,6 +29,14 @@ plików.
 %build
 chmod +w configure
 autoconf
+
+# XXX unset CPPFLAGS on (ultra)sparc to avoid large file system support
+%ifarch sparc sparc64
+CPPFLAGS=""
+export CPPFLAGS
+%endif
+
+LDFLAGS="-s"; export LDFLAGS
 %configure
 
 make
