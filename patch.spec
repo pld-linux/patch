@@ -9,7 +9,7 @@ Summary(tr):	GNU yama yardЩmcЩ programlarЩ
 Summary(uk):	Утил╕та GNU patch, для модиф╕кац╕╖/апгрейду файл╕в
 Name:		patch
 Version:	2.5.4
-Release:	15
+Release:	16
 License:	GPL
 Group:		Applications/Text
 # 2.5.8 available at ftp://alpha.gnu.org/gnu/patch/
@@ -91,6 +91,7 @@ Patch - це програма, яка допомога╓ в модиф╕кац╕╖ файл╕в. Ви можете
 %{__aclocal} -I m4
 chmod +w configure
 %{__autoconf}
+cp -f /usr/share/automake/config.* .
 CFLAGS="%{rpmcflags} -D_GNU_SOURCE"
 %configure \
 %ifarch sparc sparc64
@@ -110,14 +111,12 @@ install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/patch.1
 
-gzip -9nf NEWS README AUTHORS ChangeLog
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc NEWS README AUTHORS ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
