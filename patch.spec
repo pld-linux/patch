@@ -12,7 +12,8 @@ Version:	2.5.4
 Release:	14
 License:	GPL
 Group:		Applications/Text
-Source0:	ftp://prep.ai.mit.edu/pub/gnu/patch/%{name}-%{version}.tar.gz
+# 2.5.8 available at ftp://alpha.gnu.org/gnu/patch/
+Source0:	ftp://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.gz
 Source1:	%{name}.1.pl
 Patch0:		%{name}-stderr.patch
 Patch1:		%{name}-suffix.patch
