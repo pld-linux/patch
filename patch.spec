@@ -5,7 +5,7 @@ Summary(pl):	GNU patch
 Summary(tr):	GNU yama yardýmcý programlarý
 Name:		patch
 Version:	2.5.4
-Release:	10
+Release:	11
 License:	GPL
 Group:		Applications/Text
 Group(de):	Applikationen/Text
@@ -58,7 +58,7 @@ deðiþiklikleri asýllarý ile birleþtirir.
 chmod +w configure
 autoconf
 
-CFLAGS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS} -D_GNU_SOURCE"
+CFLAGS="%{rpmcflags} -D_GNU_SOURCE"
 %configure \
 %ifarch sparc sparc64
 	--disable-largefile
