@@ -2,7 +2,7 @@ Summary:	GNU patch Utilities
 Summary(pl):	GNU patch
 Name:		patch
 Version:	2.5.3
-Release:	3
+Release:	4
 Copyright:	GPL
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
