@@ -85,7 +85,7 @@ Patch - це програма, яка допомога╓ в модиф╕кац╕╖ файл╕в. Ви можете
 %patch3 -p1
 
 %build
-aclocal -I m4
+%{__aclocal} -I m4
 chmod +w configure
 %{__autoconf}
 CFLAGS="%{rpmcflags} -D_GNU_SOURCE"
