@@ -2,7 +2,7 @@ Summary:	GNU patch Utilities
 Summary(pl):	GNU patch
 Name:		patch
 Version:	2.5.3
-Release:	4
+Release:	5
 Copyright:	GPL
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
@@ -35,6 +35,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 install -d $RPM_BUILD_ROOT/usr/{bin,share/man/man1}
 
 install -s patch $RPM_BUILD_ROOT/usr/bin
@@ -53,6 +54,10 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/man/man1/patch.1.gz
 
 %changelog
+* Mon May 10 1999 Piotr Czerwiñski <pius@pld.org.pl>
+  [2.5.3-5]
+- FHS 2.0 compliant changes.
+
 * Mon Apr 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [2.5.3-3]
 - recompiled on new rpm.
