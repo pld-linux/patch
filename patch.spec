@@ -19,7 +19,7 @@ Patch0:		%{name}-stderr.patch
 Patch1:		%{name}-suffix.patch
 Patch2:		%{name}-ac25x.patch
 Patch3:		%{name}-sigsegv.patch
-Patch3:		%{name}-ac.patch
+Patch4:		%{name}-ac.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -85,6 +85,7 @@ Patch - це програма, яка допомога╓ в модиф╕кац╕╖ файл╕в. Ви можете
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 %{__aclocal} -I m4
