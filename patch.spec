@@ -5,11 +5,12 @@ Summary(pl):	GNU patch
 Summary(tr):	GNU yama yardýmcý programlarý
 Name:		patch
 Version:	2.5.4
-Release:	4
+Release:	5
 License:	GPL
-Group:		Utilities/Text
-Group(pl):	Narzêdzia/Tekst
+Group:		Applications/Text
+Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
+Group(pl):	Aplikacje/Tekst
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/patch/%{name}-%{version}.tar.gz
 Patch0:		%{name}-stderr.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -55,7 +56,6 @@ deðiþiklikleri asýllarý ile birleþtirir.
 chmod +w configure
 autoconf
 
-LDFLAGS="-s"; export LDFLAGS
 %configure \
 %ifarch sparc sparc64
 	--disable-largefile
@@ -70,15 +70,13 @@ rm -rf $RPM_BUILD_ROOT
 	bindir=$RPM_BUILD_ROOT%{_bindir} \
 	man1dir=$RPM_BUILD_ROOT%{_mandir}/man1
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*\
-	NEWS README AUTHORS ChangeLog
+gzip -9nf NEWS README AUTHORS ChangeLog
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {NEWS,README,AUTHORS,ChangeLog}.gz
-
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
