@@ -2,7 +2,7 @@ Summary:	GNU patch Utilities
 Summary(pl):	GNU patch
 Name:		patch
 Version:	2.5.3
-Release:	5
+Release:	6
 Copyright:	GPL
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
@@ -27,22 +27,20 @@ plików.
 %setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure %{_target_platform} \
-	--prefix=%{_prefix}
+chmod +w configure
+autoconf && %configure
 
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
+make \
+    bindir=$RPM_BUILD_ROOT%{_bindir} \
+    man1dir=$RPM_BUILD_ROOT%{_mandir}/man1 \
+    install install-strip
 
-install -s patch $RPM_BUILD_ROOT%{_bindir}
-install patch.man $RPM_BUILD_ROOT%{_mandir}/man1/patch.1
-
-gzip -9nf NEWS README AUTHORS ChangeLog \
-	$RPM_BUILD_ROOT%{_mandir}/man1/patch.1
+gzip -9nf NEWS README AUTHORS ChangeLog $RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,10 +48,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {NEWS,README,AUTHORS,ChangeLog}.gz
-%attr(755,root,root) %{_bindir}/patch
-%{_mandir}/man1/patch.1*
+
+%attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
 
 %changelog
+* Sat Jun 05 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
+-  FHS 2.0,
+
 * Tue May 25 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [2.5.3-5]
 - spec based on RH version,
