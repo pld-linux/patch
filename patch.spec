@@ -1,7 +1,9 @@
 Summary:	GNU patch Utilities
 Summary(de):	GNU-Patch-Utilities
+Summary(es):	Programa de inicialización System V
 Summary(fr):	Utilitaires patch de GNU
 Summary(pl):	GNU patch
+Summary(pt_BR):	Programa de inicialização System V
 Summary(tr):	GNU yama yardýmcý programlarý
 Name:		patch
 Version:	2.5.4
@@ -15,6 +17,7 @@ Source0:	ftp://prep.ai.mit.edu/pub/gnu/patch/%{name}-%{version}.tar.gz
 Patch0:		%{name}-stderr.patch
 Patch1:		%{name}-suffix.patch
 Patch2:		%{name}-ac25x.patch
+Patch3:		%{name}-sigsegv.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,6 +35,11 @@ ermitteln und senden Sie diese an die Personen mit der Originaldatei.
 Diese können dann mit Hilfe von PATCH ihre Dateien auf den neuesten
 Stand bringen.
 
+%description -l es
+SysVinit es el primer programa ejecutado por el kernel Linux cuando se
+inicia el sistema. Controla arranque, funcionamiento y cierre de todos
+los otros programas.
+
 %description -l fr
 patch est un programme aidant à patcher des programmes. Vous pouvez
 l'utiliser pour appliquer des « diffs ». On utilise diff pour noter
@@ -47,6 +55,11 @@ plik i przy pomocy programu patch na³o¿yæ je. Daje to mo¿liwo¶æ
 rozprowadzania ma³ych plików, w których s± jedynie zmiany, jakie
 zosta³y wprowadzone w stosunku do orginalnych plików.
 
+%description -l pt_BR
+SysVinit é o primeiro programa executado pelo kernel Linux quando o
+sistema é inicializado. Controla inicialização, funcionamento e
+finalização de todos os outros programas.
+
 %description -l tr
 Bu programý 'diff' komutunu uygulamak için kullanabilirsiniz. diff,
 bir dosya içindeki deðiþikliklerý belirtir; 'patch' komutu
@@ -57,6 +70,7 @@ deðiþiklikleri asýllarý ile birleþtirir.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 aclocal -I m4
