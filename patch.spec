@@ -36,7 +36,7 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_bindor.%{_mandir}/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir,%{_mandir}/man1}
 
 install -s patch $RPM_BUILD_ROOT%{_bindir}
 install patch.man $RPM_BUILD_ROOT%{_mandir}/man1/patch.1
