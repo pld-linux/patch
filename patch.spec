@@ -4,8 +4,8 @@ Summary(fr):	Utilitaires patch de GNU
 Summary(pl):	GNU patch
 Summary(tr):	GNU yama yardýmcý programlarý
 Name:		patch
-Version:	2.5.3
-Release:	7
+Version:	2.5.4
+Release:	1
 Copyright:	GPL
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
