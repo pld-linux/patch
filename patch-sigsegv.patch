@@ -10,7 +10,7 @@ Since Version: 2.5-2
  }
  
 +void
-+reset_scan_input_vars()
++reset_scan_input_vars(void)
 +{
 + using_plan_a = 1;
 + i_buffer = NULL;
@@ -34,11 +34,11 @@ Since Version: 2.5-2
  
  	/* from here on, open no standard i/o files, because malloc */
  	/* might misfire and we can't catch it easily */
---- patch-2.5.orig/inp.h
-+++ patch-2.5/inp.h
+--- patch-2.5.9.orig/inp.h
++++ patch-2.5.9/inp.h
 @@ -7,4 +7,5 @@
- char const *ifetch PARAMS ((LINENUM, int, size_t *));
- void get_input_file PARAMS ((char const *, char const *));
- void re_input PARAMS ((void));
-+void reset_scan_input_vars PARAMS (());
- void scan_input PARAMS ((char *));
+ char const *ifetch (LINENUM, bool, size_t *);
+ void get_input_file (char const *, char const *);
+ void re_input (void);
++void reset_scan_input_vars (void);
+ void scan_input (char *);

@@ -2,26 +2,23 @@ Summary:	GNU patch Utilities
 Summary(de):	GNU-Patch-Utilities
 Summary(es):	Programa de inicialización System V
 Summary(fr):	Utilitaires patch de GNU
-Summary(pl):	GNU patch
+Summary(pl):	Program GNU patch
 Summary(pt_BR):	Programa de inicialização System V
 Summary(ru):	õÔÉÌÉÔÁ GNU patch, ÄÌÑ ÍÏÄÉÆÉËÁÃÉÉ/ÁÐÇÒÅÊÄÁ ÆÁÊÌÏ×
 Summary(tr):	GNU yama yardýmcý programlarý
 Summary(uk):	õÔÉÌ¦ÔÁ GNU patch, ÄÌÑ ÍÏÄÉÆ¦ËÁÃ¦§/ÁÐÇÒÅÊÄÕ ÆÁÊÌ¦×
 Name:		patch
-Version:	2.5.4
-Release:	16
+Version:	2.5.9
+Release:	1
 License:	GPL
 Group:		Applications/Text
-# 2.5.8 available at ftp://alpha.gnu.org/gnu/patch/
-Source0:	ftp://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.gz
+# old/so-called-stable versions in ftp://ftp.gnu.org/gnu/patch/
+Source0:	ftp://alpha.gnu.org/gnu/patch/%{name}-%{version}.tar.gz
 # Source0-md5: ee5ae84d115f051d87fcaaef3b4ae782
 Source1:	%{name}.1.pl
 Patch0:		%{name}-stderr.patch
-Patch1:		%{name}-suffix.patch
-Patch2:		%{name}-ac25x.patch
-Patch3:		%{name}-sigsegv.patch
-Patch4:		%{name}-ac.patch
-BuildRequires:	autoconf
+Patch1:		%{name}-sigsegv.patch
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,11 +49,11 @@ modifications avec son original.
 
 %description -l pl
 Patch jest programem umo¿liwiaj±cym nak³adanie ³atek (patchy) na
-pliki. Przy pomocy programu diff mo¿esz sprawdziæ jakie zmiany zosta³y
+pliki. Przy pomocy programu diff mo¿na sprawdziæ, jakie zmiany zosta³y
 zrobione w pliku, zmiany te wys³aæ do kogo¶, kto posiada oryginalny
 plik i przy pomocy programu patch na³o¿yæ je. Daje to mo¿liwo¶æ
 rozprowadzania ma³ych plików, w których s± jedynie zmiany, jakie
-zosta³y wprowadzone w stosunku do orginalnych plików.
+zosta³y wprowadzone w stosunku do oryginalnych plików.
 
 %description -l pt_BR
 SysVinit é o primeiro programa executado pelo kernel Linux quando o
@@ -84,16 +81,10 @@ Patch - ÃÅ ÐÒÏÇÒÁÍÁ, ÑËÁ ÄÏÐÏÍÏÇÁ¤ × ÍÏÄÉÆ¦ËÁÃ¦§ ÆÁÊÌ¦×. ÷É ÍÏÖÅÔÅ
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
 
 %build
 %{__aclocal} -I m4
-chmod +w configure
 %{__autoconf}
-cp -f /usr/share/automake/config.* .
-CFLAGS="%{rpmcflags} -D_GNU_SOURCE"
 %configure \
 %ifarch sparc sparc64
 	--disable-largefile
@@ -104,20 +95,18 @@ CFLAGS="%{rpmcflags} -D_GNU_SOURCE"
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install install-strip \
+%{__make} install \
 	bindir=$RPM_BUILD_ROOT%{_bindir} \
 	man1dir=$RPM_BUILD_ROOT%{_mandir}/man1
 
-install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
-
-install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/patch.1
+install -D %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/patch.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc NEWS README AUTHORS ChangeLog
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
