@@ -52,14 +52,3 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-
-%changelog
-* Sat Jun 05 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [2.5.3-6]
-- FHS 2.0,
-
-* Tue May 25 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [2.5.3-5]
-- spec based on RH version,
-- rewrited by PLD team,
-- pl translation Andrzej Nakonieczny <dzemik@shadow.eu.org>.
