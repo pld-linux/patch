@@ -5,7 +5,7 @@ Summary(pl):	GNU patch
 Summary(tr):	GNU yama yardýmcý programlarý
 Name:		patch
 Version:	2.5.4
-Release:	11
+Release:	12
 License:	GPL
 Group:		Applications/Text
 Group(de):	Applikationen/Text
@@ -14,6 +14,9 @@ Group(pl):	Aplikacje/Tekst
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/patch/%{name}-%{version}.tar.gz
 Patch0:		%{name}-stderr.patch
 Patch1:		%{name}-suffix.patch
+Patch2:		%{name}-ac25x.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -53,12 +56,14 @@ deðiþiklikleri asýllarý ile birleþtirir.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
-#chmod +w configure
-#autoconf
+aclocal -I m4
+chmod +w configure
+autoconf
 CFLAGS="%{rpmcflags} -D_GNU_SOURCE"
-%configure2_13 \
+%configure \
 %ifarch sparc sparc64
 	--disable-largefile
 %endif
