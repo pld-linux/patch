@@ -9,7 +9,7 @@ Summary(tr):	GNU yama yardЩmcЩ programlarЩ
 Summary(uk):	Утил╕та GNU patch, для модиф╕кац╕╖/апгрейду файл╕в
 Name:		patch
 Version:	2.5.4
-Release:	14
+Release:	15
 License:	GPL
 Group:		Applications/Text
 # 2.5.8 available at ftp://alpha.gnu.org/gnu/patch/
@@ -19,6 +19,7 @@ Patch0:		%{name}-stderr.patch
 Patch1:		%{name}-suffix.patch
 Patch2:		%{name}-ac25x.patch
 Patch3:		%{name}-sigsegv.patch
+Patch3:		%{name}-ac.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
