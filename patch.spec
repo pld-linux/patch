@@ -29,14 +29,14 @@ plików.
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target} \
-	--prefix=/usr
+	--prefix=%{_prefix}
 
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT/usr/{bin,share/man/man1}
+install -d $RPM_BUILD_ROOT%{_bindor.%{_mandir}/man1}
 
 install -s patch $RPM_BUILD_ROOT%{_bindir}
 install patch.man $RPM_BUILD_ROOT%{_mandir}/man1/patch.1
@@ -51,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc {NEWS,README,AUTHORS,ChangeLog}.gz
 %attr(755,root,root) %{_bindir}/patch
-%{_mandir}/man1/patch.1.gz
+%{_mandir}/man1/patch.1*
 
 %changelog
 * Mon May 10 1999 Piotr Czerwiñski <pius@pld.org.pl>
