@@ -4,10 +4,12 @@ Summary(es):	Programa de inicializaciСn System V
 Summary(fr):	Utilitaires patch de GNU
 Summary(pl):	GNU patch
 Summary(pt_BR):	Programa de inicializaГЦo System V
+Summary(ru):	Утилита GNU patch, для модификации/апгрейда файлов
 Summary(tr):	GNU yama yardЩmcЩ programlarЩ
+Summary(uk):	Утил╕та GNU patch, для модиф╕кац╕╖/апгрейду файл╕в
 Name:		patch
 Version:	2.5.4
-Release:	13
+Release:	14
 License:	GPL
 Group:		Applications/Text
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/patch/%{name}-%{version}.tar.gz
@@ -58,10 +60,22 @@ SysVinit И o primeiro programa executado pelo kernel Linux quando o
 sistema И inicializado. Controla inicializaГЦo, funcionamento e
 finalizaГЦo de todos os outros programas.
 
+%description -l ru
+Patch - это программа, которая помогает в модификации файлов. Вы
+можете использовать diff для записи модификаций файла, отослать
+изменения кому-либо, кто имеет первоначальную версию файла, и адресат
+сможет использовать 'patch' для получения его измененной версии.
+
 %description -l tr
 Bu programЩ 'diff' komutunu uygulamak iГin kullanabilirsiniz. diff,
 bir dosya iГindeki deПiЧikliklerЩ belirtir; 'patch' komutu
 deПiЧiklikleri asЩllarЩ ile birleЧtirir.
+
+%description -l uk
+Patch - це програма, яка допомога╓ в модиф╕кац╕╖ файл╕в. Ви можете
+використовувати diff для запису модиф╕кац╕й якогось файлу, в╕д╕слати
+комусь, хто ма╓ ориг╕нальну верс╕ю файлу, цей запис, ╕ адресат зможе,
+використовуючи 'patch', отримати в себе модиф╕ковану верс╕ю файлу.
 
 %prep
 %setup -q
