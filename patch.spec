@@ -5,7 +5,7 @@ Summary(pl):	GNU patch
 Summary(tr):	GNU yama yardýmcý programlarý
 Name:		patch
 Version:	2.5.4
-Release:	1
+Release:	2
 Copyright:	GPL
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
@@ -51,14 +51,11 @@ asýllarý ile birleþtirir.
 chmod +w configure
 autoconf
 
-# XXX unset CPPFLAGS on (ultra)sparc to avoid large file system support
-%ifarch sparc sparc64
-CPPFLAGS=""
-export CPPFLAGS
-%endif
-
 LDFLAGS="-s"; export LDFLAGS
-%configure
+%configure \
+%ifarch sparc sparc64
+	--disable-largefile
+%endif
 
 make
 
