@@ -38,7 +38,7 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT/usr/{bin,share/man/man1}
 
-install -s patch $RPM_BUILD_ROOT/usr/bin
+install -s patch $RPM_BUILD_ROOT%{_bindir}
 install patch.man $RPM_BUILD_ROOT%{_mandir}/man1/patch.1
 
 gzip -9nf NEWS README AUTHORS ChangeLog \
@@ -50,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {NEWS,README,AUTHORS,ChangeLog}.gz
-%attr(755,root,root) /usr/bin/patch
+%attr(755,root,root) %{_bindir}/patch
 %{_mandir}/man1/patch.1.gz
 
 %changelog
