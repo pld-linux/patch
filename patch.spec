@@ -28,19 +28,20 @@ plików.
 
 %build
 chmod +w configure
-autoconf && %configure
+autoconf
+%configure
 
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make \
-    bindir=$RPM_BUILD_ROOT%{_bindir} \
-    man1dir=$RPM_BUILD_ROOT%{_mandir}/man1 \
-    install install-strip
+make install install-strip \
+	bindir=$RPM_BUILD_ROOT%{_bindir} \
+	man1dir=$RPM_BUILD_ROOT%{_mandir}/man1
 
-gzip -9nf NEWS README AUTHORS ChangeLog $RPM_BUILD_ROOT%{_mandir}/man1/*
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*\
+	NEWS README AUTHORS ChangeLog
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,7 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Sat Jun 05 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
--  FHS 2.0,
+  [2.5.3-6]
+- FHS 2.0,
 
 * Tue May 25 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [2.5.3-5]
