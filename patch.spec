@@ -14,7 +14,7 @@ License:	GPL
 Group:		Applications/Text
 # old/so-called-stable versions in ftp://ftp.gnu.org/gnu/patch/
 Source0:	ftp://alpha.gnu.org/gnu/patch/%{name}-%{version}.tar.gz
-# Source0-md5: ee5ae84d115f051d87fcaaef3b4ae782
+# Source0-md5:	dacfb618082f8d3a2194601193cf8716
 Source1:	%{name}.1.pl
 Patch0:		%{name}-stderr.patch
 Patch1:		%{name}-sigsegv.patch
