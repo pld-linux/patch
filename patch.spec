@@ -55,11 +55,10 @@ deðiþiklikleri asýllarý ile birleþtirir.
 %patch1 -p1
 
 %build
-chmod +w configure
-autoconf
-
+#chmod +w configure
+#autoconf
 CFLAGS="%{rpmcflags} -D_GNU_SOURCE"
-%configure \
+%configure2_13 \
 %ifarch sparc sparc64
 	--disable-largefile
 %endif
