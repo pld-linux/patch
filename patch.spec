@@ -8,10 +8,10 @@ Version:	2.5.4
 Release:	4
 License:	GPL
 Group:		Utilities/Text
-Group(fr):	Utilitaires/Texte
 Group(pl):	Narzêdzia/Tekst
+Group(fr):	Utilitaires/Texte
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/patch/%{name}-%{version}.tar.gz
-Patch0:		patch-stderr.patch
+Patch0:		%{name}-stderr.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
