@@ -1,9 +1,7 @@
 Summary:	GNU patch Utilities
 Summary(de):	GNU-Patch-Utilities
-Summary(es):	Programa de inicialización System V
 Summary(fr):	Utilitaires patch de GNU
 Summary(pl):	Program GNU patch
-Summary(pt_BR):	Programa de inicialização System V
 Summary(ru):	õÔÉÌÉÔÁ GNU patch, ÄÌÑ ÍÏÄÉÆÉËÁÃÉÉ/ÁĞÇÒÅÊÄÁ ÆÁÊÌÏ×
 Summary(tr):	GNU yama yardımcı programları
 Summary(uk):	õÔÉÌ¦ÔÁ GNU patch, ÄÌÑ ÍÏÄÉÆ¦ËÁÃ¦§/ÁĞÇÒÅÊÄÕ ÆÁÊÌ¦×
@@ -37,11 +35,6 @@ ermitteln und senden Sie diese an die Personen mit der Originaldatei.
 Diese können dann mit Hilfe von PATCH ihre Dateien auf den neuesten
 Stand bringen.
 
-%description -l es
-SysVinit es el primer programa ejecutado por el kernel Linux cuando se
-inicia el sistema. Controla arranque, funcionamiento y cierre de todos
-los otros programas.
-
 %description -l fr
 patch est un programme aidant à patcher des programmes. Vous pouvez
 l'utiliser pour appliquer des « diffs ». On utilise diff pour noter
@@ -56,11 +49,6 @@ zrobione w pliku, zmiany te wys³aæ do kogo¶, kto posiada oryginalny
 plik i przy pomocy programu patch na³o¿yæ je. Daje to mo¿liwo¶æ
 rozprowadzania ma³ych plików, w których s± jedynie zmiany, jakie
 zosta³y wprowadzone w stosunku do oryginalnych plików.
-
-%description -l pt_BR
-SysVinit é o primeiro programa executado pelo kernel Linux quando o
-sistema é inicializado. Controla inicialização, funcionamento e
-finalização de todos os outros programas.
 
 %description -l ru
 Patch - ÜÔÏ ĞÒÏÇÒÁÍÍÁ, ËÏÔÏÒÁÑ ĞÏÍÏÇÁÅÔ × ÍÏÄÉÆÉËÁÃÉÉ ÆÁÊÌÏ×. ÷Ù
