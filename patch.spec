@@ -1,10 +1,10 @@
 Summary:	GNU patch Utilities
-Summary(de.UTF-8):   GNU-Patch-Utilities
-Summary(fr.UTF-8):   Utilitaires patch de GNU
-Summary(pl.UTF-8):   Program GNU patch
-Summary(ru.UTF-8):   Утилита GNU patch, для модификации/апгрейда файлов
-Summary(tr.UTF-8):   GNU yama yardımcı programları
-Summary(uk.UTF-8):   Утиліта GNU patch, для модифікації/апгрейду файлів
+Summary(de.UTF-8):	GNU-Patch-Utilities
+Summary(fr.UTF-8):	Utilitaires patch de GNU
+Summary(pl.UTF-8):	Program GNU patch
+Summary(ru.UTF-8):	Утилита GNU patch, для модификации/апгрейда файлов
+Summary(tr.UTF-8):	GNU yama yardımcı programları
+Summary(uk.UTF-8):	Утиліта GNU patch, для модифікації/апгрейду файлів
 Name:		patch
 Version:	2.5.9
 Release:	5
