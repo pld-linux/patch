@@ -7,7 +7,7 @@ Summary(tr.UTF-8):	GNU yama yardımcı programları
 Summary(uk.UTF-8):	Утиліта GNU patch, для модифікації/апгрейду файлів
 Name:		patch
 Version:	2.5.9
-Release:	6
+Release:	7
 License:	GPL
 Group:		Applications/Text
 # old/so-called-stable versions in ftp://ftp.gnu.org/gnu/patch/
