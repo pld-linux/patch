@@ -1,3 +1,4 @@
+%bcond_without	tests
 Summary:	GNU patch Utilities
 Summary(de.UTF-8):	GNU-Patch-Utilities
 Summary(fr.UTF-8):	Utilitaires patch de GNU
@@ -76,6 +77,8 @@ Patch - це програма, яка допомогає в модифікаці
 %endif
 
 %{__make}
+
+%{?with_tests:%{__make} check}
 
 %install
 rm -rf $RPM_BUILD_ROOT
