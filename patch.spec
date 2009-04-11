@@ -67,6 +67,7 @@ Patch - це програма, яка допомогає в модифікаці
 
 %prep
 %setup -q -n %{name}-2.5.9-109-g70df4e4
+sed -i -e 's#\. update-version.sh#. ./update-version.sh#g' configure.ac
 
 %build
 %{__aclocal} -I m4 -I gl/m4
