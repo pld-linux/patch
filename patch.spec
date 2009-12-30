@@ -7,12 +7,12 @@ Summary(ru.UTF-8):	Утилита GNU patch, для модификации/ап�
 Summary(tr.UTF-8):	GNU yama yardımcı programları
 Summary(uk.UTF-8):	Утиліта GNU patch, для модифікації/апгрейду файлів
 Name:		patch
-Version:	2.6
+Version:	2.6.1
 Release:	1
 License:	GPL
 Group:		Applications/Text
 Source0:	ftp://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.bz2
-# Source0-md5:	5729b1430ba6c2216e0f3eb18f213c81
+# Source0-md5:	0818d1763ae0c4281bcdc63cdac0b2c0
 Source1:	%{name}.1.pl
 URL:		http://www.gnu.org/software/patch/
 BuildRequires:	autoconf >= 2.57
