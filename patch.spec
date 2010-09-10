@@ -9,9 +9,9 @@ Summary(uk.UTF-8):	Утиліта GNU patch, для модифікації/ап�
 Name:		patch
 Version:	2.6.1
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Applications/Text
-Source0:	ftp://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.bz2
 # Source0-md5:	0818d1763ae0c4281bcdc63cdac0b2c0
 Source1:	%{name}.1.pl
 URL:		http://www.gnu.org/software/patch/
@@ -95,6 +95,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/patch
+%{_mandir}/man1/patch.1*
 %lang(pl) %{_mandir}/pl/man1/*
