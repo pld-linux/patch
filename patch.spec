@@ -1,25 +1,23 @@
+%bcond_without	tests
 Summary:	GNU patch Utilities
-Summary(de):	GNU-Patch-Utilities
-Summary(es):	Programa de inicializaciСn System V
-Summary(fr):	Utilitaires patch de GNU
-Summary(pl):	Program GNU patch
-Summary(pt_BR):	Programa de inicializaГЦo System V
-Summary(ru):	Утилита GNU patch, для модификации/апгрейда файлов
-Summary(tr):	GNU yama yardЩmcЩ programlarЩ
-Summary(uk):	Утил╕та GNU patch, для модиф╕кац╕╖/апгрейду файл╕в
+Summary(de.UTF-8):	GNU-Patch-Utilities
+Summary(fr.UTF-8):	Utilitaires patch de GNU
+Summary(pl.UTF-8):	Program GNU patch
+Summary(ru.UTF-8):	пёя┌п╦п╩п╦я┌п╟ GNU patch, п╢п╩я▐ п╪п╬п╢п╦я└п╦п╨п╟я├п╦п╦/п╟п©пЁя─п╣п╧п╢п╟ я└п╟п╧п╩п╬п╡
+Summary(tr.UTF-8):	GNU yama yardд╠mcд╠ programlarд╠
+Summary(uk.UTF-8):	пёя┌п╦п╩я√я┌п╟ GNU patch, п╢п╩я▐ п╪п╬п╢п╦я└я√п╨п╟я├я√я≈/п╟п©пЁя─п╣п╧п╢я┐ я└п╟п╧п╩я√п╡
 Name:		patch
-Version:	2.5.9
+Version:	2.6.1
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Applications/Text
-# old/so-called-stable versions in ftp://ftp.gnu.org/gnu/patch/
-Source0:	ftp://alpha.gnu.org/gnu/patch/%{name}-%{version}.tar.gz
-# Source0-md5: ee5ae84d115f051d87fcaaef3b4ae782
+Source0:	http://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.bz2
+# Source0-md5:	0818d1763ae0c4281bcdc63cdac0b2c0
 Source1:	%{name}.1.pl
-Patch0:		%{name}-stderr.patch
-Patch1:		%{name}-sigsegv.patch
+URL:		http://www.gnu.org/software/patch/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
+%{?with_tests:BuildRequires:	ed}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,62 +26,50 @@ apply 'diff's. Basically, you can use diff to note the changes in a
 file, send the changes to someone who has the original file, and they
 can use 'patch' to combine your changes to their original.
 
-%description -l de
+%description -l de.UTF-8
 Patch ist ein Programm zum Ausbessern von Programmen. Benutzen Sie
-zunДchst ein Diffs-Programm, um die дnderungen an der Datei zu
+zunц╓chst ein Diffs-Programm, um die ц└nderungen an der Datei zu
 ermitteln und senden Sie diese an die Personen mit der Originaldatei.
-Diese kЖnnen dann mit Hilfe von PATCH ihre Dateien auf den neuesten
+Diese kц╤nnen dann mit Hilfe von PATCH ihre Dateien auf den neuesten
 Stand bringen.
 
-%description -l es
-SysVinit es el primer programa ejecutado por el kernel Linux cuando se
-inicia el sistema. Controla arranque, funcionamiento y cierre de todos
-los otros programas.
-
-%description -l fr
-patch est un programme aidant Ю patcher des programmes. Vous pouvez
-l'utiliser pour appliquer des ╚ diffs ╩. On utilise diff pour noter
-les changements dans un fichier, on envoie ces changements Ю celui qui
-a le fichier original et qui peut utiliser ╚ patch ╩ pour combiner nos
+%description -l fr.UTF-8
+patch est un programme aidant ц═ patcher des programmes. Vous pouvez
+l'utiliser pour appliquer des б╚ diffs б╩. On utilise diff pour noter
+les changements dans un fichier, on envoie ces changements ц═ celui qui
+a le fichier original et qui peut utiliser б╚ patch б╩ pour combiner nos
 modifications avec son original.
 
-%description -l pl
-Patch jest programem umo©liwiaj╠cym nakЁadanie Ёatek (patchy) na
-pliki. Przy pomocy programu diff mo©na sprawdziФ, jakie zmiany zostaЁy
-zrobione w pliku, zmiany te wysЁaФ do kogo╤, kto posiada oryginalny
-plik i przy pomocy programu patch naЁo©yФ je. Daje to mo©liwo╤Ф
-rozprowadzania maЁych plikСw, w ktСrych s╠ jedynie zmiany, jakie
-zostaЁy wprowadzone w stosunku do oryginalnych plikСw.
+%description -l pl.UTF-8
+Patch jest programem umoе╪liwiajд┘cym nakе┌adanie е┌atek (patchy) na
+pliki. Przy pomocy programu diff moе╪na sprawdziд┤, jakie zmiany zostaе┌y
+zrobione w pliku, zmiany te wysе┌aд┤ do kogoе⌡, kto posiada oryginalny
+plik i przy pomocy programu patch naе┌oе╪yд┤ je. Daje to moе╪liwoе⌡д┤
+rozprowadzania maе┌ych plikцЁw, w ktцЁrych sд┘ jedynie zmiany, jakie
+zostaе┌y wprowadzone w stosunku do oryginalnych plikцЁw.
 
-%description -l pt_BR
-SysVinit И o primeiro programa executado pelo kernel Linux quando o
-sistema И inicializado. Controla inicializaГЦo, funcionamento e
-finalizaГЦo de todos os outros programas.
+%description -l ru.UTF-8
+Patch - я█я┌п╬ п©я─п╬пЁя─п╟п╪п╪п╟, п╨п╬я┌п╬я─п╟я▐ п©п╬п╪п╬пЁп╟п╣я┌ п╡ п╪п╬п╢п╦я└п╦п╨п╟я├п╦п╦ я└п╟п╧п╩п╬п╡. п▓я▀
+п╪п╬п╤п╣я┌п╣ п╦я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ diff п╢п╩я▐ п╥п╟п©п╦я│п╦ п╪п╬п╢п╦я└п╦п╨п╟я├п╦п╧ я└п╟п╧п╩п╟, п╬я┌п╬я│п╩п╟я┌я▄
+п╦п╥п╪п╣п╫п╣п╫п╦я▐ п╨п╬п╪я┐-п╩п╦п╠п╬, п╨я┌п╬ п╦п╪п╣п╣я┌ п©п╣я─п╡п╬п╫п╟я┤п╟п╩я▄п╫я┐я▌ п╡п╣я─я│п╦я▌ я└п╟п╧п╩п╟, п╦ п╟п╢я─п╣я│п╟я┌
+я│п╪п╬п╤п╣я┌ п╦я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ 'patch' п╢п╩я▐ п©п╬п╩я┐я┤п╣п╫п╦я▐ п╣пЁп╬ п╦п╥п╪п╣п╫п╣п╫п╫п╬п╧ п╡п╣я─я│п╦п╦.
 
-%description -l ru
-Patch - это программа, которая помогает в модификации файлов. Вы
-можете использовать diff для записи модификаций файла, отослать
-изменения кому-либо, кто имеет первоначальную версию файла, и адресат
-сможет использовать 'patch' для получения его измененной версии.
+%description -l tr.UTF-8
+Bu programд╠ 'diff' komutunu uygulamak iц╖in kullanabilirsiniz. diff,
+bir dosya iц╖indeki deд÷iе÷ikliklerд╠ belirtir; 'patch' komutu
+deд÷iе÷iklikleri asд╠llarд╠ ile birleе÷tirir.
 
-%description -l tr
-Bu programЩ 'diff' komutunu uygulamak iГin kullanabilirsiniz. diff,
-bir dosya iГindeki deПiЧikliklerЩ belirtir; 'patch' komutu
-deПiЧiklikleri asЩllarЩ ile birleЧtirir.
-
-%description -l uk
-Patch - це програма, яка допомога╓ в модиф╕кац╕╖ файл╕в. Ви можете
-використовувати diff для запису модиф╕кац╕й якогось файлу, в╕д╕слати
-комусь, хто ма╓ ориг╕нальну верс╕ю файлу, цей запис, ╕ адресат зможе,
-використовуючи 'patch', отримати в себе модиф╕ковану верс╕ю файлу.
+%description -l uk.UTF-8
+Patch - я├п╣ п©я─п╬пЁя─п╟п╪п╟, я▐п╨п╟ п╢п╬п©п╬п╪п╬пЁп╟я■ п╡ п╪п╬п╢п╦я└я√п╨п╟я├я√я≈ я└п╟п╧п╩я√п╡. п▓п╦ п╪п╬п╤п╣я┌п╣
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐п╡п╟я┌п╦ diff п╢п╩я▐ п╥п╟п©п╦я│я┐ п╪п╬п╢п╦я└я√п╨п╟я├я√п╧ я▐п╨п╬пЁп╬я│я▄ я└п╟п╧п╩я┐, п╡я√п╢я√я│п╩п╟я┌п╦
+п╨п╬п╪я┐я│я▄, я┘я┌п╬ п╪п╟я■ п╬я─п╦пЁя√п╫п╟п╩я▄п╫я┐ п╡п╣я─я│я√я▌ я└п╟п╧п╩я┐, я├п╣п╧ п╥п╟п©п╦я│, я√ п╟п╢я─п╣я│п╟я┌ п╥п╪п╬п╤п╣,
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┤п╦ 'patch', п╬я┌я─п╦п╪п╟я┌п╦ п╡ я│п╣п╠п╣ п╪п╬п╢п╦я└я√п╨п╬п╡п╟п╫я┐ п╡п╣я─я│я√я▌ я└п╟п╧п╩я┐.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
-%{__aclocal} -I m4
+%{__aclocal} -I m4 -I gl/m4
 %{__autoconf}
 %configure \
 %ifarch sparc sparc64
@@ -91,6 +77,8 @@ Patch - це програма, яка допомога╓ в модиф╕кац╕╖ файл╕в. Ви можете
 %endif
 
 %{__make}
+
+%{?with_tests:%{__make} check}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -107,6 +95,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/patch
+%{_mandir}/man1/patch.1*
 %lang(pl) %{_mandir}/pl/man1/*
