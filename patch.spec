@@ -7,17 +7,20 @@ Summary(ru.UTF-8):	Утилита GNU patch, для модификации/ап�
 Summary(tr.UTF-8):	GNU yama yardımcı programları
 Summary(uk.UTF-8):	Утиліта GNU patch, для модифікації/апгрейду файлів
 Name:		patch
-Version:	2.6.1
+Version:	2.7
 Release:	1
 License:	GPL v2+
 Group:		Applications/Text
 Source0:	http://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.bz2
-# Source0-md5:	0818d1763ae0c4281bcdc63cdac0b2c0
+# Source0-md5:	1f3a075ea06705f194a2a4ce7045f072
 Source1:	%{name}.1.pl
 URL:		http://www.gnu.org/software/patch/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
-%{?with_tests:BuildRequires:	ed}
+%if %{with tests}
+BuildRequires:	bash
+BuildRequires:	ed
+%endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -69,16 +72,20 @@ Patch - це програма, яка допомогає в модифікаці
 %setup -q
 
 %build
-%{__aclocal} -I m4 -I gl/m4
+%{__aclocal} -I m4
 %{__autoconf}
 %configure \
 %ifarch sparc sparc64
-	--disable-largefile
+	--disable-largefile \
 %endif
+	--disable-silent-rules
 
 %{__make}
 
-%{?with_tests:%{__make} check}
+%if %{with tests}
+%{__make} check \
+	SHELL=/bin/bash
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
