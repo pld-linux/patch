@@ -17,6 +17,7 @@ Source1:	%{name}.1.pl
 URL:		http://www.gnu.org/software/patch/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
+BuildRequires:	attr-devel
 %if %{with tests}
 BuildRequires:	bash
 BuildRequires:	ed
