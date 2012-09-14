@@ -9,15 +9,15 @@ Summary(uk.UTF-8):	Утиліта GNU patch, для модифікації/ап�
 Name:		patch
 Version:	2.7
 Release:	2
-License:	GPL v2+
+License:	GPL v3+
 Group:		Applications/Text
 Source0:	http://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.bz2
 # Source0-md5:	1f3a075ea06705f194a2a4ce7045f072
 Source1:	%{name}.1.pl
 Patch0:		%{name}-git.patch
 URL:		http://www.gnu.org/software/patch/
-BuildRequires:	autoconf >= 2.57
-BuildRequires:	automake
+BuildRequires:	autoconf >= 2.65
+BuildRequires:	automake >= 1:1.11.2
 BuildRequires:	attr-devel
 %if %{with tests}
 BuildRequires:	bash
@@ -77,6 +77,8 @@ Patch - це програма, яка допомогає в модифікаці
 %build
 %{__aclocal} -I m4
 %{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 %ifarch sparc sparc64
 	--disable-largefile \
@@ -104,7 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/patch
 %{_mandir}/man1/patch.1*
-%lang(pl) %{_mandir}/pl/man1/*
+%lang(pl) %{_mandir}/pl/man1/patch.1*
