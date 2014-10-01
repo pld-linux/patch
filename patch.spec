@@ -8,12 +8,13 @@ Summary(tr.UTF-8):	GNU yama yardımcı programları
 Summary(uk.UTF-8):	Утиліта GNU patch, для модифікації/апгрейду файлів
 Name:		patch
 Version:	2.7.1
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	http://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.xz
 # Source0-md5:	e9ae5393426d3ad783a300a338c09b72
 Source1:	%{name}.1.pl
+Patch0:		%{name}-git.patch
 URL:		http://www.gnu.org/software/patch/
 BuildRequires:	autoconf >= 2.65
 BuildRequires:	automake >= 1:1.11.2
@@ -73,6 +74,7 @@ Patch - це програма, яка допомогає в модифікаці
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 %{__aclocal} -I m4
