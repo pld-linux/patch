@@ -7,12 +7,12 @@ Summary(ru.UTF-8):	Утилита GNU patch, для модификации/ап�
 Summary(tr.UTF-8):	GNU yama yardımcı programları
 Summary(uk.UTF-8):	Утиліта GNU patch, для модифікації/апгрейду файлів
 Name:		patch
-Version:	2.7.2
+Version:	2.7.3
 Release:	1
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	http://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.xz
-# Source0-md5:	0b0217d45d3d45d3f07d6b241abbeb2a
+# Source0-md5:	29b87be845e4662ab0ca0d48a805ecc6
 Source1:	%{name}.1.pl
 URL:		http://www.gnu.org/software/patch/
 BuildRequires:	autoconf >= 2.65
