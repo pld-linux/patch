@@ -1,4 +1,7 @@
-%bcond_without	tests
+#
+# Conditional build:
+%bcond_without	tests	# "make check"
+#
 Summary:	GNU patch Utilities
 Summary(de.UTF-8):	GNU-Patch-Utilities
 Summary(fr.UTF-8):	Utilitaires patch de GNU
@@ -7,12 +10,12 @@ Summary(ru.UTF-8):	Утилита GNU patch, для модификации/ап�
 Summary(tr.UTF-8):	GNU yama yardımcı programları
 Summary(uk.UTF-8):	Утиліта GNU patch, для модифікації/апгрейду файлів
 Name:		patch
-Version:	2.7.3
+Version:	2.7.4
 Release:	1
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	http://ftp.gnu.org/gnu/patch/%{name}-%{version}.tar.xz
-# Source0-md5:	29b87be845e4662ab0ca0d48a805ecc6
+# Source0-md5:	abc59498fcdddd44e0d07764aa105fd2
 Source1:	%{name}.1.pl
 URL:		http://www.gnu.org/software/patch/
 BuildRequires:	autoconf >= 2.65
